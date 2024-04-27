@@ -1,10 +1,11 @@
+import OrderUI from "@/components/order/OrderUI";
 
 
 
-import React from 'react'
-
-export default function page() {
+export default function OrderPage() {
   return (
-    <div>page</div>
+    <div>Order page
+      <OrderUI  />
+    </div>
   )
 }

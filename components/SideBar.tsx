@@ -1,22 +1,13 @@
-"use client";
+'use client'
+import { getCategories } from "@/helpers/getCategories";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const menuItems = [
-  {
-    name: "Coffee",
-    href: "#",
-    svg: "",
-  },
-  {
-    name: "Hamburgers",
-    href: "#",
-    svg: "",
-  },
-  
-];
 
-const SideBar = () => {
+
+export const SideBar =  () => {
+  const categories =  getCategories();
+  console.log(categories);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -67,6 +58,7 @@ const SideBar = () => {
               <span className=" text-blue-900">Shop</span>
             </p>
             <ul className="space-y-2 font-medium">
+              {/* 
               {menuItems.map((item) => (
                 <li key={item.name} className="mt-9">
                   <Link
@@ -77,9 +69,10 @@ const SideBar = () => {
                   </Link>
                 </li>
               ))}
+              */}
               <li className="mt-9">
                 <Link
-                  href={""}
+                  href={"/order"}
                   className="flex items-center p-2 text-white rounded-lg hover:bg-blue-400 bg-blue-800"
                 >
                   MyOrder
