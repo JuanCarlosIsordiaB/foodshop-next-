@@ -1,13 +1,10 @@
-'use client'
-import { getCategories } from "@/helpers/getCategories";
+"use client";
+
+import { GetCategories } from "@/helpers/getCategories";
 import Link from "next/link";
 import React, { useState } from "react";
 
-
-
-export const SideBar =  () => {
-  const categories =  getCategories();
-  console.log(categories);
+export const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -57,19 +54,8 @@ export const SideBar =  () => {
               Food
               <span className=" text-blue-900">Shop</span>
             </p>
-            <ul className="space-y-2 font-medium">
-              {/* 
-              {menuItems.map((item) => (
-                <li key={item.name} className="mt-9">
-                  <Link
-                    href={item.href}
-                    className="flex items-center p-2 text-white rounded-lg hover:bg-blue-400"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-              */}
+            <ul className="space-y-1 font-medium">
+              <GetCategories />
               <li className="mt-9">
                 <Link
                   href={"/order"}
