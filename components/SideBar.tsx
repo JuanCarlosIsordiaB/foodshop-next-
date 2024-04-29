@@ -1,11 +1,18 @@
-"use client";
-
-import { GetCategories } from "@/helpers/getCategories";
+'use client'
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import React, { useState } from "react";
+import { prisma } from "@/lib/prisma";
+import { categories } from "@/prisma/data/categories";
 
-export const SideBar = () => {
+interface Category {
+  id: number;
+  name: string;
+  slug: string;
+}
+
+const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prevState) => !prevState);
@@ -15,6 +22,8 @@ export const SideBar = () => {
     setIsSidebarOpen(false);
   };
 
+ 
+
   return (
     <>
       <button
@@ -22,7 +31,7 @@ export const SideBar = () => {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
         onClick={toggleSidebar}
       >
         <span className="sr-only">Open sidebar</span>
@@ -55,8 +64,20 @@ export const SideBar = () => {
               <span className=" text-blue-900">Shop</span>
             </p>
             <ul className="space-y-1 font-medium">
-              <GetCategories />
-              <li className="mt-9">
+              <div className="mb-9">
+                {categories.map((category) => (
+                  <li key={category.slug}>
+                    <Link
+                      href={`/order/${category.slug}`}
+                      className="flex items-center p-2 text-white rounded-lg hover:bg-blue-400 my-2"
+                    >
+                      {category.name}
+                    </Link>
+                  </li>
+                ))}
+              </div>
+
+              <li className="">
                 <Link
                   href={"/order"}
                   className="flex items-center p-2 text-white rounded-lg hover:bg-blue-400 bg-blue-800"
