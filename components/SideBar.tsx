@@ -1,18 +1,12 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { prisma } from "@/lib/prisma";
 import { categories } from "@/prisma/data/categories";
+import { SideBarOption } from "./order/ui/page";
 
-interface Category {
-  id: number;
-  name: string;
-  slug: string;
-}
 
 const SideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prevState) => !prevState);
@@ -21,8 +15,6 @@ const SideBar = () => {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
-
- 
 
   return (
     <>
@@ -66,14 +58,7 @@ const SideBar = () => {
             <ul className="space-y-1 font-medium">
               <div className="mb-9">
                 {categories.map((category) => (
-                  <li key={category.slug}>
-                    <Link
-                      href={`/order/${category.slug}`}
-                      className="flex items-center p-2 text-white rounded-lg hover:bg-blue-400 my-2"
-                    >
-                      {category.name}
-                    </Link>
-                  </li>
+                  <SideBarOption name={category.name} slug={category.slug} key={category.slug}  />
                 ))}
               </div>
 
