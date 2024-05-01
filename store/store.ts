@@ -1,4 +1,4 @@
-import { OrderItem } from "@/interfaces/category.interface";
+import { OrderItem, Product } from "@/interfaces/category.interface";
 import { create } from "zustand";
 
 
@@ -6,11 +6,11 @@ import { create } from "zustand";
 
 interface Store {
     order: OrderItem[];
+    addProduct: (product: Product) => void;
 }
 
 
 export const useStore = create<Store>((set) => ({
     order: [],
-    addProduct: (product: OrderItem) => set((state) => ({ order: [...state.order, product] })),
-    removeProduct: (product: OrderItem) => set((state) => ({ order: state.order.filter((item) => item.product.id !== product.product.id) })),
+    addProduct: (product) => {console.log('Agregando producto al carrito', product.name)}
 }))

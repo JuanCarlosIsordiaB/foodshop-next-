@@ -11,7 +11,7 @@ export interface Product {
   price: number;
   image: string;
   categoryId: number;
-  category: Category;
+  category?: Category;
 }
 export interface OrderItem {
   product: Product;

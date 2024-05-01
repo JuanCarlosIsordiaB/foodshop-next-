@@ -1,13 +1,16 @@
+
 import { formatCurrency } from '@/helpers';
-import { products } from '@/prisma/data/products';
+import { useStore } from '@/store/store';
 import { Product } from '@prisma/client';
 import Image from 'next/image';
+import AddProductButton from './AddProductButton';
 
 interface ProductCartProps {
   product: Product;
 }
 
 export default function ProductCart({ product }: ProductCartProps) {
+  
   return (
     <div className='border m-2 rounded-md shadow-xl bg-white relative sm:max-w-xs md:max-w-sm lg:max-w-lg xl:max-w-xl mx-auto p-4 h-[600px] md:h-[700px] flex flex-col justify-between'>
 
@@ -23,11 +26,7 @@ export default function ProductCart({ product }: ProductCartProps) {
         <p className='mt-5 font-bold text-xl text-amber-500'>
           {formatCurrency(product.price)}
         </p>
-        <button
-          className='bg-blue-500 text-xs md:text-md rounded-md font-bold text-white px-4 py-2 mt-5 w-full hover:bg-blue-800 transition-all'
-        >
-          Add to Cart
-        </button>
+        <AddProductButton product={product} />
       </div>
 
     </div>

@@ -9,7 +9,7 @@ interface CategoryProps {
 
 export const SideBarOption = ({ name, slug }: CategoryProps) => {
   const params = useParams<{category: string}>();
-  console.log(params)
+  
   return (
     <li>
       <Link
