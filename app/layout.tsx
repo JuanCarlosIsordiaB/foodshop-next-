@@ -18,12 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={`${inter.className} bg-gray-100 p-4 sm:ml-64`}>
-        <div>
+      <body className={`${inter.className} bg-gray-200  p-4 sm:ml-64 md:flex md:flex-col md:items-center md:min-h-screen `}> 
+        <div className="">
           <SideBar />
           <main>{children}</main>
         </div>
       </body>
-    </html>
+    </html> // flex flex-col items-center w-full max-w-screen-lg mx-auto
+    // flex justify-center items-center min-h-screen
   );
 }
