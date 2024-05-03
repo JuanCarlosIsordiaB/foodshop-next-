@@ -3,6 +3,7 @@ import { useStore } from "@/store/store";
 import ProductDetails from "../products/ProductDetails";
 import { useMemo } from "react";
 import { formatCurrency } from "@/helpers";
+import { Toaster, toast } from "sonner";
 
 export default function OrderSummary() {
   const store = useStore((state) => state.order);
@@ -26,8 +27,8 @@ export default function OrderSummary() {
         )}
       </div>
       {store.length > 0 && (
-        <div className="w-full lg:w-1/3">
-          <p className="text-2xl mt-5 font-bold text-gray-500 text-center  p-2 rounded-md shadow-md">
+        <div className="w-full lg:w-1/3 md:ml-9 bg-white  p-3 h-[200px] rounded-xl ">
+          <p className="text-2xl mt-5 font-bold text-gray-500 text-center  ">
             Total:{" "}
             <span className="text-blue-800">{formatCurrency(total)}</span>
           </p>
