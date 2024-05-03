@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -13,15 +13,15 @@ export default function Home() {
           className="rounded-xl my-2 md:ml-9"
           src="/productsImages/donas_11.jpg"
           alt="food"
-          width={400}
-          height={400}
+          width={300}
+          height={300}
         />
         <img
           className="rounded-xl "
           src="/productsImages/pizzas_02.jpg"
           alt="food"
-          width={400}
-          height={400}
+          width={300}
+          height={300}
         />
       </div>
     </div>

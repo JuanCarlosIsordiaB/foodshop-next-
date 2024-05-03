@@ -14,7 +14,7 @@ export default function ProductCart({ product }: ProductCartProps) {
   
   
   return (
-    <div className='border m-2 rounded-md shadow-xl bg-white relative sm:max-w-xs md:max-w-sm lg:max-w-lg xl:max-w-xl mx-auto p-4 h-[700px] md:h-[850px] flex flex-col justify-between'>
+    <div className='border m-2 rounded-md shadow-xl bg-white relative sm:max-w-xs md:max-w-sm lg:max-w-lg xl:max-w-xl mx-auto p-4 h-[650px] md:h-[700px] xl:h-[800px] flex flex-col justify-between'>
 
       <Image
         className='w-full h-auto'
