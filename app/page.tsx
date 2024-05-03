@@ -2,17 +2,27 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="md:flex ">
-      <div className="w-1/3 items-center">
-        <h1 className="text-gray-500 font-bold text-4xl text-center  md:text-9xl mt-9">
+    <div className="flex flex-col md:flex-row items-center">
+      <h1 className="text-white bg-blue-500 rounded-xl shadow-md p-5 font-bold text-4xl text-center md:text-6xl my-9">
         Start Ordering your{" "}
-        <span className="block text-center text-blue-500">Favorite Food</span>
+        <span className="block text-center text-blue-900">Favorite Food</span>
       </h1>
-      </div>
-      
-      <div className="w-2/3">
-        <Image className="rounded-xl ml-8 mb-4" src="/productsImages/donas_11.jpg" alt="food" width={400} height={400} />
-        <Image className="rounded-xl ml-80" src="/productsImages/pizzas_02.jpg" alt="food" width={500} height={500} />
+
+      <div className="w-full max-w-lg m-3">
+        <img
+          className="rounded-xl my-2 md:ml-9"
+          src="/productsImages/donas_11.jpg"
+          alt="food"
+          width={400}
+          height={400}
+        />
+        <img
+          className="rounded-xl "
+          src="/productsImages/pizzas_02.jpg"
+          alt="food"
+          width={400}
+          height={400}
+        />
       </div>
     </div>
   );
