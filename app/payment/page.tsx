@@ -96,7 +96,7 @@ export default function PaymentForm() {
             } rounded-md p-2 mt-1 w-full`}
           />
           {errors.cardNumber && (
-            <p className="text-red-500 text-sm mt-1">Card number is required</p>
+            <p className="text-red-500 text-sm mt-1">Card number is required!!!</p>
           )}
         </div>
         <div className="flex flex-col mb-4">
